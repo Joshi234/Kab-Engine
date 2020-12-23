@@ -1,0 +1,6 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/joshu/source/repos/Game1/Game1/Content/ase32.png","C:/Users/joshu/source/repos/Game1/Game1/Content/bin/Windows/ase32.xnb","TextureProcessor","Texture2DContent",259,4181,0,1927057
+"C:/Users/joshu/source/repos/Game1/Game1/Content/block.png","C:/Users/joshu/source/repos/Game1/Game1/Content/bin/Windows/block.xnb","TextureProcessor","Texture2DContent",208,341,0,0151694
+"C:/Users/joshu/source/repos/Game1/Game1/Content/roehre.png","C:/Users/joshu/source/repos/Game1/Game1/Content/bin/Windows/roehre.xnb","TextureProcessor","Texture2DContent",127,597,0,0158023
+"C:/Users/joshu/source/repos/Game1/Game1/Content/Text.spritefont","C:/Users/joshu/source/repos/Game1/Game1/Content/bin/Windows/Text.xnb","FontDescriptionProcessor","SpriteFontContent",2008,37922,0,2134179
+"C:/Users/joshu/source/repos/Game1/Game1/Content/xbox.png","C:/Users/joshu/source/repos/Game1/Game1/Content/bin/Windows/xbox.xnb","TextureProcessor","Texture2DContent",57569,5760085,0,2028383
