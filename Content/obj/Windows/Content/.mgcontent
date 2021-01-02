@@ -6,11 +6,13 @@
   <SourceFiles>
     <File>C:/Users/Joshua/source/repos/Game1/Game1/Content/ase32.png</File>
     <File>C:/Users/Joshua/source/repos/Game1/Game1/Content/block.png</File>
+    <File>C:/Users/Joshua/source/repos/Game1/Game1/Content/dirt_block.png</File>
     <File>C:/Users/Joshua/source/repos/Game1/Game1/Content/roehre.png</File>
     <File>C:/Users/Joshua/source/repos/Game1/Game1/Content/Text.spritefont</File>
     <File>C:/Users/Joshua/source/repos/Game1/Game1/Content/xbox.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

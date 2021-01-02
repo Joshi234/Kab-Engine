@@ -5,6 +5,7 @@ using Game1.BasicComponents;
 using System;
 using Game1.UI;
 using System.Threading;
+using Game1.Controls;
 namespace Game1
 {
     public partial class Game1 : Game
@@ -15,7 +16,9 @@ namespace Game1
         public GameRenderer renderer;
         public Physics.PhysicEngine physicsEngine;
         public double deltaTime;
-        public float physicsValue = 0.891f;
+        //public float physicsValue = 0.891f;
+        public float physicsValue = 0.01f;
+        public Controls.Controls controls = new Controls.Controls();
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -23,10 +26,10 @@ namespace Game1
             IsMouseVisible = true;
             _graphics.PreferredBackBufferWidth = 1920;
             _graphics.PreferredBackBufferHeight = 1080;
-            _graphics.SynchronizeWithVerticalRetrace = false;
+            _graphics.SynchronizeWithVerticalRetrace = true;
             TargetElapsedTime = System.TimeSpan.FromMilliseconds(8);
             this.IsFixedTimeStep = false;
-            _graphics.IsFullScreen = false;
+            _graphics.IsFullScreen = true;
             _graphics.ApplyChanges();
     
         }
@@ -48,6 +51,7 @@ namespace Game1
         }
         protected override void Update(GameTime gameTime)
         {
+            controls.UpdateVars();
             deltaTime = (double)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {

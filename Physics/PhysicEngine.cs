@@ -13,6 +13,7 @@ namespace Game1.Physics
         private float Gravitation;
         private List<GameObject> objects = new List<GameObject>();
         Game1 _game;
+        double delta = 1;
         public PhysicEngine(float gravitation, Game1 game)
         {
             Gravitation = gravitation;
@@ -20,7 +21,7 @@ namespace Game1.Physics
         }
         public void Update()
         {
-            double delta=1;
+            
             while (true)
             {
                 
@@ -64,10 +65,11 @@ namespace Game1.Physics
                         }
                     }
                 }
+                //Thread.Sleep(100);
                 watch.Stop();
-         
-                if (watch.ElapsedMilliseconds < 5) { 
-                  Thread.Sleep((int)(5 - watch.ElapsedMilliseconds));
+
+                if (watch.ElapsedMilliseconds < 10) { 
+                  Thread.Sleep((int)(10 - watch.ElapsedMilliseconds));
                 }
 
 

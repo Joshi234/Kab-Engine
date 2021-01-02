@@ -21,8 +21,7 @@ namespace Game1
         private Text text;
         private bool isPlaying = false;
         private bool isDead = false;
-
-
+        SpriteFont font;
         public void CollisionEnter()
         {
             if (isDead == false)
@@ -37,99 +36,31 @@ namespace Game1
             //Gets called when the games load
    
 
-            SpriteFont font = Content.Load<SpriteFont>("Text");
-            Texture2D roehreSprite = Content.Load<Texture2D>("roehre");
-            float roehreRandom = _random.Next(-75, 75);
-            roehre1 = new GameObject(new Vector2(1000f, roehreRandom + 850F), roehreSprite, new Size2D(300f, 600f));
-            renderer.RegisterNewGameObjectToRender(roehre1);
-            roehre2 = new GameObject(new Vector2(1000f, roehreRandom), roehreSprite, new Size2D(300f, 600f), Effect: SpriteEffects.FlipVertically);
-            renderer.RegisterNewGameObjectToRender(roehre2);
-            text = new Text(font, "GameOver, press enter to restart!", new Vector2(800F, 500F));
-            xbox = Content.Load<Texture2D>("ase32");
-            for (int i = 0; i < 300; i++)
+             font = Content.Load<SpriteFont>("Text");
+            //Texture2D roehreSprite = Content.Load<Texture2D>("roehre");
+            //float roehreRandom = _random.Next(-75, 75);
+            //roehre1 = new GameObject(new Vector2(1000f, roehreRandom + 850F), roehreSprite, new Size2D(300f, 600f));
+             text = new Text(font, "0", new Vector2(0f, 0f));
+            renderer.RegisterNewTextToRender(text);
+            Texture2D dirt_block = Content.Load<Texture2D>("dirt_block");
+            for(int y= 0; y < 1; y++) { 
+            for(int i = 0; i < 100; i++)
             {
-                gameObject = new GameObject(new Vector2((float)(_random.NextDouble()*1920f), (float)(_random.NextDouble() * 900f)), xbox, new Size2D(64, 64), true);
-                gameObject.isStatic = false;
-                //-gameObject.isCollider = true;
-                gameObject.bounciness = 1f;
-                renderer.RegisterNewGameObjectToRender(gameObject);
-                physicsEngine.AddNewPhysicsObject(gameObject);
+                    gameObject = new GameObject(new Vector2(32f * i, 0f + (32f * y)), dirt_block, new Size2D(32f, 32f));
+                    gameObject.isStatic = false;
+                    physicsEngine.AddNewPhysicsObject(gameObject);
+                    renderer.RegisterNewGameObjectToRender(gameObject);
             }
-
-            gameObject = new GameObject(new Vector2(400f, 500f), xbox, new Size2D(64, 64), true);
-
-
-            physicsEngine.AddNewPhysicsObject(gameObject);
- 
-            renderer.RegisterNewGameObjectToRender(gameObject);
-            gameObject.onCollision += new GameObject.OnCollisionEventHandler(CollisionEnter);
-            gameObject = new GameObject(new Vector2(0f, 1000f), xbox, new Size2D(1920, 64), true);
-            gameObject.bounciness = 1f;
-            renderer.RegisterNewGameObjectToRender(gameObject);
-
-            physicsEngine.AddNewPhysicsObject(gameObject);
-            //physicsEngine.AddNewPhysicsObject(roehre1);
-            //physicsEngine.AddNewPhysicsObject(roehre2);
+            }
         }
 
         protected void UpdateLogic()
         {
-            //Gets called once a frame
-            var gamePad = GamePad.GetState(PlayerIndex.One);
-            var keyBoard = Keyboard.GetState();
- 
-            //GamePad.SetVibration(PlayerIndex.One, 1f, 1f);
-            if (keyBoard.IsKeyDown(Keys.Enter))
-            {
-                if (isDead)
-                {
-                    isDead = false;
-                    isPlaying = true;
-                    renderer.RemoveText(text);
-                    gameObject.Position = new Vector2(400f, 500f);
-                    float roehreRandom = _random.Next(-75, 75);
-                    roehre1.Position = new Vector2(1000f, roehreRandom + 850F);
-                    roehre2.Position = new Vector2(1000f, roehreRandom);
-                    gameObject.isStatic = true;
-                    gameObject.Velocity = new Vector2(0f, 0f);
-                }
-            }
+            renderer.RemoveText(text);
+            text = new Text(font, gameObject.Position.Y.ToString(), new Vector2(0f, 0f));
+            renderer.RegisterNewTextToRender(text);
 
 
-            if (isPlaying)
-            {
-                roehre1.Position = new Vector2(roehre1.Position.X - (roehrenSpeed * (float)deltaTime), roehre1.Position.Y);
-                roehre2.Position = new Vector2(roehre2.Position.X - (roehrenSpeed * (float)deltaTime), roehre2.Position.Y);
-            }
-            if (isDead == false)
-            {
-                if (gameObject.Position.Y > 1800 || gameObject.Position.Y < 10f)
-                {
-                    isDead = true;
-                    isPlaying = false;
-                    renderer.RegisterNewTextToRender(text);
-                
-                }
-                if (gamePad.IsButtonDown(Buttons.A) || Keyboard.GetState().IsKeyDown(Keys.Space))
-                {
-
-                    if (isPlaying == false)
-                    {
-                        isPlaying = true;
-                    }
-                    gameObject.isStatic = false;
-
-                    gameObject.AddVelocity(new Vector2(0f, -0.004f*(float)deltaTime));
-                    if (roehre1.Position.X < -330f)
-                    {
-                        float roehreRandom = _random.Next(-75, 75);
-
-                        roehre1.Position = new Vector2(1920f, roehreRandom + 850F);
-                        roehre2.Position = new Vector2(1920f, roehreRandom);
-                    }
-                }
-      
-            }
         }
     }
 }

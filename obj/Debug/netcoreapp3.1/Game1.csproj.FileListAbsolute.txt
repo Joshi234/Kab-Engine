@@ -80,3 +80,4 @@ C:\Users\Joshua\source\repos\Game1\Game1\obj\Debug\netcoreapp3.1\Game1.csproj.Co
 C:\Users\Joshua\source\repos\Game1\Game1\obj\Debug\netcoreapp3.1\Game1.dll
 C:\Users\Joshua\source\repos\Game1\Game1\obj\Debug\netcoreapp3.1\Game1.pdb
 C:\Users\Joshua\source\repos\Game1\Game1\obj\Debug\netcoreapp3.1\Game1.genruntimeconfig.cache
+C:\Users\Joshua\source\repos\Game1\Game1\bin\Debug\netcoreapp3.1\Content\dirt_block.xnb
