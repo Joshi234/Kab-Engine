@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joshua\\source\\repos\\Game1\\Game1\\Game1.csproj": {}
+    "C:\\Users\\Joshua\\source\\repos\\Game1\\Kab-Engine\\Game1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joshua\\source\\repos\\Game1\\Game1\\Game1.csproj": {
+    "C:\\Users\\Joshua\\source\\repos\\Game1\\Kab-Engine\\Game1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joshua\\source\\repos\\Game1\\Game1\\Game1.csproj",
+        "projectUniqueName": "C:\\Users\\Joshua\\source\\repos\\Game1\\Kab-Engine\\Game1.csproj",
         "projectName": "Game1",
-        "projectPath": "C:\\Users\\Joshua\\source\\repos\\Game1\\Game1\\Game1.csproj",
+        "projectPath": "C:\\Users\\Joshua\\source\\repos\\Game1\\Kab-Engine\\Game1.csproj",
         "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joshua\\source\\repos\\Game1\\Game1\\obj\\",
+        "outputPath": "C:\\Users\\Joshua\\source\\repos\\Game1\\Kab-Engine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

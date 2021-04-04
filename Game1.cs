@@ -17,7 +17,7 @@ namespace Game1
         public Physics.PhysicEngine physicsEngine;
         public double deltaTime;
         //public float physicsValue = 0.891f;
-        public float physicsValue = 0.01f;
+        public float physicsValue = 0.05f;
         public Controls.Controls controls = new Controls.Controls();
         public Game1()
         {
@@ -26,7 +26,7 @@ namespace Game1
             IsMouseVisible = true;
             _graphics.PreferredBackBufferWidth = 1920;
             _graphics.PreferredBackBufferHeight = 1080;
-            _graphics.SynchronizeWithVerticalRetrace = true;
+            _graphics.SynchronizeWithVerticalRetrace = false;
             TargetElapsedTime = System.TimeSpan.FromMilliseconds(8);
             this.IsFixedTimeStep = false;
             _graphics.IsFullScreen = true;
@@ -56,6 +56,7 @@ namespace Game1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
                 Exit();
+                Environment.Exit(1);
             }
             if (Keyboard.GetState().IsKeyDown(Keys.F11))
             {
